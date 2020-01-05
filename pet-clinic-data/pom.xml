@@ -9,10 +9,13 @@
 
     <artifactId>pet-clinic-data</artifactId>
 
-   <!-- <properties>
+<!--
+    <properties>
         <spring-boot.package.skip>true</spring-boot.package.skip>
         <start-class>guru.springframework.sfgpetclinic.SfgPetClinicApplication</start-class>
-    </properties>-->
+    </properties>
+-->
+
 
     <dependencies>
         <dependency>
@@ -38,16 +41,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 
@@ -57,10 +50,24 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <skip>true</skip>
                     <mainClass>guru.springframework.sfgpetclinic.SfgPetClinicApplication</mainClass>
+                    <outputDirectory>sfg-clinic-web</outputDirectory>
                 </configuration>
+              <!--  <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <skip>true</skip>
+                            <mainClass>guru.springframework.sfgpetclinic.SfgPetClinicApplication</mainClass>
+                            <outputDirectory>sfg-clinic-web</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>-->
             </plugin>
         </plugins>
     </build>
-
 </project>
+
